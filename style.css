@@ -7,6 +7,11 @@
     font-family: 'Rubik', sans-serif;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 h1, h2, h4, h5, h6, p, a, input, textarea, ul {
     margin: 0;
     padding: 0;
@@ -20,60 +25,13 @@ a {
     text-decoration: none;
 }
 
-.swiper-slide{
-    padding: 15px 80px 50px 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-button-prev::after{
-    font-size: 35px;
-}
-
-.swiper-button-next::after{
-    font-size: 35px;
-}
-
-.swiper-button-prev{
-    color: #4438f0;
-}
-
-.swiper-button-next{
-    color: #4438f0;
-}
-
-.swiper-pagination-bullet{
-    background-color: #747474;
-    opacity: 1;
-}
-
-.swiper-pagination-bullet-active{
-    background-color: #5129c9;
-}
-
-.header-img {
-    max-width: 100%;
-    text-align: right;
-}
-
-.header-img img{
-    width: 500px;
-    border-radius: 15px;
-    border: solid 1px #4438f0;
-}
-
-.swiper{
-    display: flex;
-    align-items: center;
-    min-height: 70vh;
-}
-
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
     background-color: #4438f0;
     margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
 }
 
 aside {
@@ -93,28 +51,87 @@ aside {
     font-size: 1.3rem;
 }
 
-.texto-footer{
+.texto-footer {
     color: rgb(57, 34, 148);
     font-size: .85rem;
 }
 
-main{
+main {
     background-color: #FFF;
     border-radius: 15px;
-    margin-top: 1rem;
-    margin-left: 0;
-    margin-right: 1rem;
+    margin: 1rem 1rem 0 0;
     padding: 2rem;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.titulo-principal{
+.titulo-principal {
     color: #4438f0;
 }
 
-.header-txt{
+.header-txt {
     margin-top: 5px;
+    text-align: center;
 }
 
-.header-txt h3{
+.header-img img {
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    padding-bottom: 30px;
+}
+
+.swiper-slide {
+    padding: 15px 80px 50px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev::after{
+    font-size: 55px;
+    padding-left: 300px;
+}
+
+.swiper-button-next::after{
+    font-size: 55px;
+    padding-right: 300px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #4438f0;
+}
+
+.header-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.header-txt {
+    width: 100%;
+    text-align: center;
+}
+
+.header-txt h3 {
+    font-size: 50px;
+    color: #000000;
+    text-transform: capitalize;
     margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.header-img {
+    width: 100%;
+    text-align: center;
+}
+
+.swiper {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
 }
