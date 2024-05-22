@@ -62,8 +62,8 @@ aside {
 }
 
 .logo {
-    font-weight: 400;
-    font-size: 1.3rem;
+    font-weight: 500;
+    font-size: 2rem;
 }
 
 .menu{
@@ -82,6 +82,15 @@ aside {
     font-weight: 600;
     font-size: 1rem;
     padding: .85rem;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.btn:hover{
+    background-color: #FFF;
+    color: #0d6731;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
 .btn.active{
@@ -117,14 +126,28 @@ aside {
     box-shadow: 0 -1rem 0 #FFF;
 }
 
+.btn-primary:active::before {
+    box-shadow: 0 1rem 0 #00b248;
+}
+
+.btn-primary:active::after {
+    box-shadow: 0 -1rem 0 #00b248;
+}
+
+.btn-primary:active {
+    background-color: #00b248 !important; 
+    border-color: #00b248 !important; 
+}
+
 .bi-hand-index-thumb,
 .bi-hand-index-thumb-fill{
     transform: rotateZ(90deg);
 }
 
 .texto-footer {
-    color: #087c37;
-    font-size: .85rem;
+    color: #0f4926;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 main {
@@ -141,6 +164,7 @@ main {
     color: #0d6731;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 50px;
 }
 
 .header-txt {
@@ -256,7 +280,7 @@ main.dark {
     color: #ffffff;
 }
 
-main.light {
+main.default {
     background-color: #FFF;
     color: #333333;
 }
@@ -270,6 +294,46 @@ main.light {
     border: solid 1px #000000;
     border-radius: 5px;
 }
+/* tema botones */
+.dark .btn.active{
+    background-color: #333; 
+    color: #FFF; 
+}
 
-.tema-navbar {
+.dark .btn.active::before{
+    box-shadow: 0 1rem 0 #333; 
+}
+
+.dark .btn.active::after{
+    box-shadow: 0 -1rem 0 #333;
+}
+
+.default .btn.active{
+    background-color: #FFF; 
+    color: #333; 
+}
+
+.default .btn.active::before{
+    box-shadow: 0 1rem 0 #FFF; 
+}
+
+.default .btn.active::after{
+    box-shadow: 0 -1rem 0 #FFF;
+}
+
+.dark .btn-primary:active::before {
+    box-shadow: 0 1rem 0 #00b248;
+}
+
+.dark .btn-primary:active::after{
+    box-shadow: 0 -1rem 0 #00b248;
+}
+
+.dark .btn:hover{
+    background-color: #333; 
+    color: #FFF; 
+}
+
+.dark .header-txt h3 {
+    color: white;
 }
