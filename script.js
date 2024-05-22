@@ -12,3 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     });
 });
+
+//selector temas
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#themeSelector #theme').addEventListener('change', function() {
+      var theme = this.value;
+      document.querySelector('main').className = theme;
+    });
+});
