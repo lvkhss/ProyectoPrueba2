@@ -1,3 +1,4 @@
+
 //carrusel
 document.addEventListener('DOMContentLoaded', function() {
     var swiper = new Swiper('.mySwiper-1', {
@@ -15,30 +16,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //selector temas y que guarde el tema seleccionado
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('#themeSelector #theme').addEventListener('change', function() {
-      var theme = this.value;
-      document.querySelector('main').className = theme;
-      localStorage.setItem('themeMain', theme);
+    const themeSelector = document.querySelector('#themeSelector #theme');
+    themeSelector.addEventListener('change', function() {
+        var theme = this.value;
+        document.querySelector('main').className = theme;
+        document.querySelector('body').className = theme;
+        localStorage.setItem('theme', theme);
     });
 
-    const savedThemeMain = localStorage.getItem('themeMain');
-    if (savedThemeMain) {
-        document.querySelector('main').className = savedThemeMain;
-        document.querySelector('#themeSelector #theme').value = savedThemeMain;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.querySelector('main').className = savedTheme;
+        document.querySelector('body').className = savedTheme;
+        themeSelector.value = savedTheme;
     }
 });
 
-//selector temas botones y que guarde el tema seleccionado
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('#themeSelector #theme').addEventListener('change', function() {
-      var theme = this.value;
-      document.querySelector('body').className = theme;
-      localStorage.setItem('themeBody', theme);
-    });
+// validaciones jquery
+$(document).ready(function(){
+    $("#contactForm").submit(function(event){
+        event.preventDefault();
+        
+        var nombre = $("#nombre").val().trim();
+        var apellidoPaterno = $("#apellidoPaterno").val().trim();
+        var celular = $("#celular").val().trim();
+        var email = $("#email").val().trim();
+        // expresion que encontre en google para validar email
+        var emailRegex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-    const savedThemeBody = localStorage.getItem('themeBody');
-    if (savedThemeBody) {
-        document.querySelector('body').className = savedThemeBody;
-        document.querySelector('#themeSelector #theme').value = savedThemeBody;
-    }
+        if(nombre.length < 3 || nombre.length > 20 ||
+            apellidoPaterno.length < 3 || apellidoPaterno.length > 20){
+            alert("El Nombre y Apellido deben tener entre 3 y 20 caracteres.");
+            return;
+        }
+
+        if(celular.length < 9 || celular.length > 12){
+            alert("El Celular debe tener entre 9 y 12 caracteres.");
+            return;
+        }
+
+        if(!emailRegex.test(email)){
+            alert("El Email no es Valido.");
+            return;
+        }
+
+        alert("Datos enviados correctamente!");
+        location.reload();
+    });
 });

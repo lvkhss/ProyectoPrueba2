@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -19,6 +20,7 @@
         <aside>
             <header>
                 <h1 class="logo">SotiPlants</h1>
+                <img class="logo_imagen" src="images/logo_imagen.png" alt="">
             </header>
             <nav>
                 <ul class="menu">
@@ -50,12 +52,44 @@
         </aside>
         <main>
             <h2 class="titulo-principal">Formulario de Contacto</h2>
-            <p>Si te ha gustado algun producto, no dudes en contactarnos vía Gmail O vía WhatsApp</p>
+            <p class="text-general">Si te ha gustado algun producto, no dudes en contactarnos vía Gmail O vía WhatsApp
+            </p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre*</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidoPaterno">Apellido Paterno*</label>
+                    <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno">
+                </div>
+
+                <div class="form-group">
+                    <label for="celular">Celular*</label>
+                    <input type="text" class="form-control" id="celular" name="celular">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Dejanos un mensaje con tus comentarios o con los productos que te han
+                        interesado! <br> Responderemos a la brevedad.</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" maxlength="400"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success" id="btn-form">Enviar</button>
+            </form>
+            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-envelope-at"></i>
         </main>
     </div>
-    <div id="themeSelector">
+    <div class="form-group" id="themeSelector">
         <label for="theme">Selecciona un color de fondo:</label>
-        <select id="theme">
+        <select class="form-control" id="theme">
             <option value="default">Claro</option>
             <option value="dark">Oscuro</option>
         </select>
