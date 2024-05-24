@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// validaciones jquery
+// validaciones contact form jquery
 $(document).ready(function(){
     $("#contactForm").submit(function(event){
         event.preventDefault();
